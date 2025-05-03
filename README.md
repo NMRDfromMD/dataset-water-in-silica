@@ -2,7 +2,7 @@ Water in Silica Dataset for NMRDfromMD
 ======================================
 
 <a href="webp">
-  <img src="snapshot/lj.png" align="right" width="25%"/>
+  <img src="snapshot/silica.png" align="right" width="25%"/>
 </a>
 
 GROMACS input files and raw trajectory files used to generate the data
