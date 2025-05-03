@@ -1,5 +1,5 @@
 import sys
-import readlammps
+import readlammps # install from https://github.com/simongravelle/read-lammps-data
 import numpy as np
 from copy import deepcopy
 

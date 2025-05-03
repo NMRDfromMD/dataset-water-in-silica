@@ -2,7 +2,7 @@ Water in Silica Dataset for NMRDfromMD
 ======================================
 
 <a href="webp">
-  <img src="snapshot/silica.png" align="right" width="25%"/>
+  <img src="snapshot/silica.png" align="right" width="33%"/>
 </a>
 
 GROMACS input files and raw trajectory files used to generate the data
@@ -11,11 +11,8 @@ consists of water confined in a slit silica pore.
 
 ## Repository structure
 
-- **[inputs](inputs)**: Contains the LAMMPS input files.
-- **[data](data)**: Contains simulation output files (``.data`` and ``.lammpstrj``)
-  for various temperatures, generated from the input files. Due to their
-  large size, ``.xtc`` files are not hosted in this repository. You can regenerate
-  them by relaunching the simulation with LAMMPS.
+- **[inputs](inputs)**: Contains the GROMACS input files. The [readlammps](https://github.com/simongravelle/read-lammps-data) pip package is required to create different systems.
+- **[data](data)**: Contains simulation output files.
 - **[analysis](analysis)**: Contains Python scripts for running NMRDfromMD
   and extract NMR relaxation rates.
 - **[snapshot](snapshot)**: Contains ``.png`` images of the system generated
