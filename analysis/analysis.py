@@ -8,7 +8,7 @@ from nmrdfrommd import NMRD
 from utilities import save_result, get_git_repo_path
 
 
-def main(nb_iterations):
+def main():
     """Process one temperature point"""
 
     git_path = get_git_repo_path()
@@ -63,4 +63,5 @@ def main(nb_iterations):
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    main(nb_iterations=500)
+    for i in range(500):
+        main()
