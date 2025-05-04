@@ -7,7 +7,6 @@ from nmrdfrommd import NMRD
 
 from utilities import save_result, get_git_repo_path
 
-
 def main():
     """Process one temperature point"""
 
@@ -19,7 +18,6 @@ def main():
     if not os.path.exists(topology_file) or not os.path.exists(trajectory_file):
         print(f"Missing MD data")
         return
-
     try:
         u = mda.Universe(topology_file, trajectory_file)
         water = u.select_atoms("resname SOL and type HW")
@@ -68,7 +66,7 @@ def main():
             number_i=1)
         nmr_water_silica.run_analysis()
 
-        save_result(nmr_water_silica, name=f"nmr_water_silica,")
+        save_result(nmr_water_silica, name=f"nmr_water_silica")
         print(f"nmr water-silica Success")
 
 
