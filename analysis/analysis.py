@@ -59,9 +59,22 @@ def main():
         save_result(nmr_full, name=f"nmr_full")
         print(f"nmr full Success")
 
+        nmr_water_silica = NMRD(
+            u=u,
+            atom_group=water,
+            neighbor_group = surface_groups,
+            isotropic = False,
+            type_analysis="full",
+            number_i=1)
+        nmr_water_silica.run_analysis()
+
+        save_result(nmr_water_silica, name=f"nmr_water_silica,")
+        print(f"nmr water-silica Success")
+
+
     except Exception as e:
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    for i in range(500):
+    for i in range(800):
         main()
