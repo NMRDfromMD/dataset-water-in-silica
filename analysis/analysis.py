@@ -17,8 +17,8 @@ water = u.select_atoms("resname SOL and type HW")
 surface_groups = u.select_atoms("resname SiOH and type HOY")
 all_H = water+surface_groups
 
-n = 5
-repet = 10
+n = 500
+repet = 1
 
 for iteration in range(repet):
 
@@ -28,9 +28,9 @@ for iteration in range(repet):
         isotropic = False,
         type_analysis="intra_molecular",
         number_i=n)
-    nmr_water_intra.run_analysis()
+    out = nmr_water_intra.run_analysis()
 
-    save_result(nmr_water_intra, name=f"nmr_water_intra")
+    save_result(out, n, iteration, "nmr_water_intra")
     print(f"nmr water intra Success")
 
     nmr_water_inter = NMRD(
@@ -39,9 +39,9 @@ for iteration in range(repet):
         isotropic = False,
         type_analysis="inter_molecular",
         number_i=n)
-    nmr_water_inter.run_analysis()
+    out = nmr_water_inter.run_analysis()
 
-    save_result(nmr_water_inter, name=f"nmr_water_inter")
+    save_result(out, n, iteration, "nmr_water_inter")
     print(f"nmr water inter Success")
 
     nmr_full= NMRD(
@@ -50,9 +50,9 @@ for iteration in range(repet):
         isotropic = False,
         type_analysis="full",
         number_i=n)
-    nmr_full.run_analysis()
+    out = nmr_full.run_analysis()
 
-    save_result(nmr_full, name=f"nmr_full")
+    save_result(out, n, iteration ,"nmr_full")
     print(f"nmr full Success")
 
     nmr_water_silica = NMRD(
@@ -62,7 +62,8 @@ for iteration in range(repet):
         isotropic = False,
         type_analysis="full",
         number_i=n)
-    nmr_water_silica.run_analysis()
+    out = nmr_water_silica.run_analysis()
 
-    save_result(nmr_water_silica, name=f"nmr_water_silica")
+    save_result(out, n, iteration, "nmr_water_silica")
     print(f"nmr water-silica Success")
+
